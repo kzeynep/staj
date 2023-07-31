@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Market Bilgi Formu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Market Bilgi Formu</h1>
+        <table id="market-table">
+            <thead>
+                <tr>
+                    <th>Ürün Adı</th>
+                    <th>Fiyat</th>
+                    <th>Miktar</th>
+                    <th>Kategori</th>
+                    <th>Toplam</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Kullanıcı verileri burada dinamik olarak eklenecek -->
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="5">
+                        <div class="summary">
+                            <h2>Genel Bilgi</h2>
+                            <div class="summary-item">
+                                <span>Sağlık</span>
+                                <strong id="total-health"></strong>
+                            </div>
+                            <div class="summary-item">
+                                <span>Eğitim</span>
+                                <strong id="total-education"></strong>
+                            </div>
+                            <div class="summary-item">
+                                <span>Gıda</span>
+                                <strong id="total-food"></strong>
+                            </div>
+
+                            <div class="summary-item">
+                                <span>Genel Toplam</span>
+                                <strong id="total-overall"></strong>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <form id="form" method="post" action="controller.php">
+            <label for="product-name">Ürün Adı:</label>
+            <input type="text" id="product-name" required>
+            <label for="price">Fiyat:</label>
+            <input type="text" id="price" required>
+            <label for="quantity">Miktar:</label>
+            <input type="text" id="quantity" required>
+            <label for="category">Kategori:</label>
+            <select id="category" required>
+                <option value="" selected disabled>-- Kategori Seçin --</option>
+                <option value="sağlık">Sağlık</option>
+                <option value="eğitim">Eğitim</option>
+                <option value="gıda">Gıda</option>
+            </select>
+            <button type="submit">Ekle</button>
+            <button type="button" class="clear-btn" onclick="clearTable()">Temizle</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
